@@ -1,4 +1,4 @@
-import { listKeys, ethSignMessage } from 'halo-chip'
+import { listKeys, ethSignMessage, parseURLParams } from 'halo-chip'
 import { DIDSession } from 'did-session'
 import { EthereumWebAuth, getAccountId } from '@didtools/pkh-ethereum'
 
@@ -34,9 +34,21 @@ async function sign () {
   document.getElementById('signature-span').textContent = JSON.stringify(signed)
 }
 
+function parseParams () {
+  const { keys } = parseURLParams(window.location.search)
+  if (keys) {
+    address = keys[0].address
+    did = keys[0].did
+    slot = keys[0].slot
+    document.getElementById('did-span').textContent = did
+    document.getElementById('auth').style.display = 'block'
+  }
+}
+
 window.onload = () => {
   document.getElementById("did-button").addEventListener("click", getDID);
   document.getElementById("auth-button").addEventListener("click", auth);
   document.getElementById("sign-button").addEventListener("click", sign);
+  parseParams()
 }
 

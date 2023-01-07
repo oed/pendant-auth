@@ -50,7 +50,6 @@ window.onload = () => {
   document.getElementById("auth-button").addEventListener("click", auth);
   document.getElementById("sign-button").addEventListener("click", sign);
   document.getElementById("payload").addEventListener("keypress", ({ key }) => {
-    console.log('asdf', key)
     if (key === 'Enter') {
       sign()
     }

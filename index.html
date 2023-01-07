@@ -2,15 +2,59 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=2">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <style>
+    body {
+      padding: 2em;
+      text-align: center;
+      overflow-wrap: break-word;
+    }
+    button {
+      background-color: #FFB467;
+      border: none;
+      padding: 15px 25px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+      display: inline-block;
+      border-radius: 5px;
+    }
+    button:active {
+      background-color: darkorange; /* Green */
+    }
+    #did-span {
+      background-color: #DBDBDB;
+      width: 90%;
+      height: 7vw;
+      vertical-align: middle;
+      display: inline-grid;
+      align-items: center;
+      padding: 2vw;
+      font-size: 2.5vw;
+      font-weight: bold;
+      color: green;
+    }
+    #sign {
+      align-items: center;
+      justify-content: space-around;
+    }
+    #payload {
+      padding: 15px;
+      border-radius: 5px;
+    }
+    #sign-button {
+      <!-- width: 40%; -->
+    }
+    </style>
     <title>Ceramic Pendant</title>
   </head>
   <body>
     <script src="dist/bundle.js"></script>
-    <button id="did-button" >Get DID</button>
-    <br />
-    <br />
     <span id="did-span"></span>
+    <br />
+    <br />
+    <button id="did-button" >Get DID</button>
     <br />
     <br />
     <div id="auth" style="display:none">
@@ -18,12 +62,12 @@
       <br />
       <br />
       <div id="sign" style="display:none">
-        <input id="payload" />
+        <input id="payload" enterkeyhint="go"/>
         <button id="sign-button" >Sign</button>
-        <br />
-        <br />
-        <span id="signature-span"></span>
       </div>
+      <br />
+      <br />
+      <span id="signature-span"></span>
     </div>
   </body>
 </html>

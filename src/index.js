@@ -24,7 +24,7 @@ async function auth () {
   const authMethod = await EthereumWebAuth.getAuthMethod(provider, accountId)
   session = await DIDSession.authorize(authMethod, { resources: ['ceramic://*'] })
 
-  document.getElementById('sign').style.display = 'block'
+  document.getElementById('sign').style.display = 'flex'
 }
 
 async function sign () {
@@ -49,6 +49,12 @@ window.onload = () => {
   document.getElementById("did-button").addEventListener("click", getDID);
   document.getElementById("auth-button").addEventListener("click", auth);
   document.getElementById("sign-button").addEventListener("click", sign);
+  document.getElementById("payload").addEventListener("keypress", ({ key }) => {
+    console.log('asdf', key)
+    if (key === 'Enter') {
+      sign()
+    }
+  });
   parseParams()
 }
 

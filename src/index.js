@@ -7,6 +7,10 @@ let address, did, slot, session
 
 async function getDID () {
   const keys = await listKeys()
+  showDID(keys)
+}
+
+function showDID (keys) {
   address = keys[0].address
   did = keys[0].did
   slot = keys[0].slot
@@ -38,11 +42,7 @@ async function sign () {
 function parseParams () {
   const { keys } = parseURLParams(window.location.search)
   if (keys) {
-    address = keys[0].address
-    did = keys[0].did
-    slot = keys[0].slot
-    document.getElementById('did-span').textContent = did
-    document.getElementById('auth').style.display = 'block'
+    showDID(keys)
   }
 }
 

@@ -21,9 +21,13 @@
       border-radius: 5px;
     }
     button:active {
-      background-color: darkorange; /* Green */
+      background-color: darkorange;
     }
-    #did-span {
+    button:disabled {
+      background-color: #FFD580;
+      color: gray;
+    }
+    #did-span, #soul-span {
       background-color: #DBDBDB;
       width: 90%;
       height: 7vw;
@@ -31,9 +35,11 @@
       display: inline-grid;
       align-items: center;
       padding: 2vw;
-      font-size: 2.5vw;
       font-weight: bold;
+    }
+    #did-span {
       color: green;
+      font-size: 2.5vw;
     }
     #sign {
       align-items: center;
@@ -43,12 +49,28 @@
       padding: 15px;
       border-radius: 5px;
     }
+    #hackathon {
+      background-color: #FFB467;
+      border-radius: 5px;
+      width: 90%;
+      vertical-align: middle;
+      display: inline-grid;
+      align-items: center;
+      padding: 2vw;
+      font-weight: bold;
+    }
+    #hackinfo {
+      display: none;
+      padding: 1vw;
+    }
     </style>
     <title>Ceramic Pendant</title>
   </head>
   <body>
     <script src="dist/bundle.js"></script>
     <span id="did-span"></span>
+    <br />
+    <span id="soul-span"></span>
     <br />
     <br />
     <button id="did-button" >Get DID</button>
@@ -66,5 +88,40 @@
       <br />
       <span id="signature-span"></span>
     </div>
+    <br />
+    <br />
+    <br />
+    <div id="hackathon">
+      Hackathon
+      <br />
+      (click for more...)
+      <span id="hackinfo">
+        <br />
+        <br />
+        Welcome to the retreat hackathon! 
+        <br />
+        <br />
+        <br />
+        What you have in your hand is a ceramic pendant that can serve as your crypto identity. You can see it as a badge that represents you are a member of the 3Box Labs team. 
+        <br />
+        <br />
+        The goal of this hackathon is to build something cool which uses your and your team mates pendants using Ceramic & ComposeDB. Bonus points if you integrate with OpenAI or similar AI tools.
+        <br />
+        <br />
+        This hackathon will be ongoing not only during the retreat, but until the beginning of our next season. During the retreat your goal is to form a team, come up with ideas for the hack, and maybe get some code out.
+        <br />
+        <br />
+        <a href="https://www.notion.so/threebox/f5afafe4bafe4a20b612f3cc8919d565?v=f1e69489b1d34dc38f3a24f2bc394b11">> Regsiter your team <</a>
+        <br />
+        <br />
+        Resources:
+        <br />
+        <br />
+        <a href="https://github.com/oed/pendant-auth">https://github.com/oed/pendant-auth</a>
+        <br />
+        <br />
+        <a href="https://github.com/oed/halo-chip/">https://github.com/oed/halo-chip/</a>
+      </span>
+    <div>
   </body>
 </html>
